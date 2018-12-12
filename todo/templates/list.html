@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block body_content1 %}  
+
+<h1>{{ zb12 }}</h1>
+<div class="container">
+<table class="table table-bordered" >
+
+  <tr>
+    <th scope="col">日期</th>
+    <th scope="col">值班狱长</th>
+    <th scope="col">值班科长</th>
+    <th scope="col">值班民警</th>
+  </tr>
+  <tbody class="table-striped">
+  {% for item in list1 %}
+  <tr>
+    <td>{{ item.date|date:"Y-m-d" }}</td>
+    <td>
+    {{ item.ld }}
+    </td>
+     <td>
+    {{ item.db }}
+    </td>
+     <td>
+    {{ item.mj|escape }}
+    </td>
+ </tr> 
+</tbody>
+  
+    
+   
+  
+ {% endfor %}
+
+</table>
+</div>
+
+
+{% endblock %}
