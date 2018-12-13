@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+{{ title }}
+
+{% endblock %}
+
+{% block body_content1 %}
+
+
+<h1>
+{{ date|date:"Y-m-d" }}
+</h1>
+
+<form class="form-horizontal" role="form" action='/test/' method='post'>
+
+  <div class="form-group">
+    <div class="col-sm-6">
+    <label for="name">可多选的选择列表</label>
+  </div>
+  <div class="col-sm-6">
+    <select multiple class="form-control" style="width:200px;height:200px">
+{% for a in mj %}
+      <option name={{ a.id }}>{{ a.name_minjing }}</option>
+      {% endfor %}
+    </select>
+</div>
+  </div>
+  <input value="ok" type='submit'>
+</form>
+
+
+
+
+
+
+
+{% endblock %}

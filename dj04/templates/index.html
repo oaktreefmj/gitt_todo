@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+{{ title }}
+
+{% endblock %}
+
+{% block body_content1 %}
+
+<h3>{{ zb }}</h3>
+<h3>用户：{{ username }}</h3>
+
+<table class='table table-bordered' style="font-size:18px;">
+
+ <tr>
+    <th width='150'>监狱值班</th>
+    <th width='150'>{{ lingdao }}</th>
+    <th width='150'>科室值班</th>
+    <th >{{ lingdao1 }}</th>
+     <th width='150'>监狱押犯</th>
+    <th >{{ scro1 }}</th>
+     <th width='150'>禁闭</th>
+    <th >{{ scro2 }}</th>
+     <th width='150'>住院</th>
+    <th >{{ scro3 }}</th>
+  </tr>
+</table>
+<table class='table table-bordered' style="font-size:16px;">
+  <tr>
+    <th scope="col" width='150'>监区</th>
+    <th scope="col" width='150'>实押</th>
+    <th scope="col" width='150'>禁闭</th>
+    <th scope="col" width='150'>住院</th>
+    <th scope="col">值班民警</th>
+  </tr>
+
+  {% for item in obj %}
+  <tr>
+    <th scope="row">{{ item.jianqu }}</th>
+    <td>{{ item.shiya }}</td>
+    <td>{{ item.jiuyi}}</td>
+    <td>{{ item.oth}}</td>
+    <td>{{ item.mj}}</td>
+  </tr>
+ {% endfor %}
+
+</table>
+
+
+{% endblock %}
+
+
+

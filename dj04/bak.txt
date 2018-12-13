@@ -1,0 +1,25 @@
+def list(request):
+	zfrenshus = zfrenshu.objects.all()
+	obj1 = ['riqi','yuzhang','kezhang','shiya','jinbi','zhuyuan']
+	obj = []
+	for zf in zfrenshus:
+		pass
+
+	return render(request, 'list.html',locals())
+
+
+
+	
+  {% for item in zhibanf %}
+  <tr>
+   
+    <td>{{ item.date_zhiban|date:'Y-m-d' }}</td>
+    <td>{% for a in item.name_zhiban.all %}
+         {{ a.name_minjing }}&nbsp&nbsp
+          {% endfor %}
+    </td>
+    <td>{{ item.oth}}</td>
+    <td>{{ item.mj}}</td>
+    <td>{{ item.mj}}</td>
+  </tr>
+ {% endfor %}

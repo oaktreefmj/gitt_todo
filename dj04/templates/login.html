@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+
+{% endblock %}
+
+{% block body_content1 %}
+
+<div class='panel panel-default'>
+<div class='panel-heard'>
+
+</div>
+<div class='panel-body'>
+<form class='form-horizontal' action='/login/' method='post'>
+{% csrf_token %}
+<table class='table table-bordered' style="font-size:18px;">
+{{ form.as_table}}
+</table>
+<input type='submit' value='登陆' class='btn btn-primary'>
+</form>
+
+</div>
+</div>
+
+
+{% endblock %}
